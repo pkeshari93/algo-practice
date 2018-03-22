@@ -26,18 +26,19 @@ function reverse(str) {
 
     // ********************* Solution 2 *****************************
 
-    // let reversed  = '';
-    // for (let character of str){
-    //     reversed = character + reversed;
-    // }
-    // return reversed;
+    let reversed  = '';
+    for (let character of str){
+        reversed = character + reversed;
+        debugger;    
+    }
+    return reversed;
     // ********************* Solution 2 *****************************
   
     // ********************* Solution 3 *****************************
-
-    return str.split('').reduce((reversed, character) =>
-        character + reversed, ''); 
+    // return str.split('').reduce((reversed, character) =>
+    //     character + reversed, ''); 
     // ********************* Solution 3 *****************************
 }
+reverse('hello'); 
 
 module.exports = reverse;

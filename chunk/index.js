@@ -30,6 +30,7 @@ function chunk(array, size) {
     let f = 0
     let s = 0
     while (i < array.length){
+        //can also be done using .push for array instaed of f
         finalArray[f] = array.slice(i, i + size)
         f++
         i = i + size

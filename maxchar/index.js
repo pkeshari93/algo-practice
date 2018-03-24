@@ -9,6 +9,8 @@ function maxChar(str) {
     const charMap = {}
     let max = 0
     let maxChar = ''
+
+    // creating a map object out of the array
     for (let char of str){
         if(charMap[char]) {
             charMap[char] ++
@@ -28,8 +30,8 @@ function maxChar(str) {
         }
     }
 
-    return maxChar
-    console.log(max, maxChar)
+    // return maxChar
+    console.log(charMap)
 
 }
 module.exports = maxChar;

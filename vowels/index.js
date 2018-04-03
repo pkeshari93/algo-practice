@@ -19,16 +19,24 @@
 
 
 // ************************************** Solution 2 ********************************************
+// function vowels(str) {
+//     let counter = 0
+//     const vowel = ['a', 'e', 'i', 'o', 'u']
+
+//     for (let char of str.toLowerCase()){
+//         if (vowel.includes(char)){
+//             counter ++
+//         }
+//     }
+
+//     return counter
+// }
+
+// ************************************** Solution 3 ********************************************
 function vowels(str) {
-    let counter = 0
-    const vowel = ['a', 'e', 'i', 'o', 'u']
-
-    for (let char of str.toLowerCase()){
-        if (vowel.includes(char)){
-            counter ++
-        }
-    }
-
-    return counter
+    
+    const matches = str.match(/[aeiou]/gi) 
+    if (matches !== null) return matches.length
+    else return 0
 }
 module.exports = vowels;

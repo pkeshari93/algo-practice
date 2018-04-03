@@ -20,6 +20,7 @@ function pyramid(n) {
             if(columns >= midpoint - 1 || columns <= midpoint + 1) level += '#'
         }
         console.log(level) 
+        console.log(row)
     }
 }
 

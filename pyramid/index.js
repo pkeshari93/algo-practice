@@ -15,12 +15,15 @@
 function pyramid(n) {
     for (let row = 0; row < n; row++){
         let level = ''
-        for(let columns = 0; columns < n + (n-1); columns++){
-            let midpoint = Math.floor((2*n)/2)
-            if(columns >= midpoint - 1 || columns <= midpoint + 1) level += '#'
+        for(let column = 0; column < n + (n-1); column++){
+            let midpoint = Math.floor((2*n -1)/2)
+
+            if(midpoint - row <= column && midpoint + row >= column){
+                level += '#'
+            }
+            else level += ' '
         }
         console.log(level) 
-        console.log(row)
     }
 }
 

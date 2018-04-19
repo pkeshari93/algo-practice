@@ -7,25 +7,32 @@
 // Example:
 //   fib(4) === 3
 
+// ****************************************** Iterative Solution ***********************************************
 function fib(n) {
-    var previous = 0
-    var fib = [0, 1]
+    var fibArray = [0, 1]
 
-    if (n === 0){
-        return 0
+    for (let i  = 2; i <= n; i++){
+        fibArray.push(fibArray[i-2] + fibArray[i-1])
     }
-    else if (n === 1){
-        
-        return 1
-    }
-    else{
-        for (let i  = 2; i <= n; i++){
-            
-            fib.push(fib[i-2] + fib[i-1])
-        }
-    }
-    return fib[n]
-    
+    return fibArray[n]
 }
+
+// ****************************************** Recursive Solution ***********************************************
+
+
+// function fib(n){
+
+//     var fib = [0, 1]
+//     if (n === 0){
+//         return 0
+//     }
+//     else if (n === 1){
+        
+//         return 1
+//     }
+//     else {
+//         if ()
+//     }
+// }   
 
 module.exports = fib;

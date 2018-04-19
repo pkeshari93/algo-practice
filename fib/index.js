@@ -19,12 +19,35 @@
 
 // ****************************************** Recursive Solution ***********************************************
 
-function fib(n){
+function slowfib(n){
 
     if (n < 2){
         return n
     } 
     return fib(n-2) + fib(n-1)
-}   
+}
 
+// ****************************************** Memoized Recursive Solution ***********************************************
+
+function memoizer(fn){
+    // storing agrs from prebvious function calls
+    const cache = {}
+
+    // ...args is a ES5 feature for multiple uknown number of args
+    return function(...args){
+
+        // checking for already happened function calls and returning them as is from cache
+        if (cache[args]){
+            return cache[args]
+        }
+
+        // else if its a new one, do the computation, return and store it in cache
+        const result = fn.apply(this, args)
+        cache[args] = result
+
+        return result
+    }
+} 
+
+const fib = memoizer(slowfib)
 module.exports = fib;

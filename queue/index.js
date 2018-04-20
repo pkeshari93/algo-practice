@@ -7,6 +7,22 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue { }
+class Queue {
+
+  // constructor to initialize an array and assign it to every new instance of queue as a property
+  constructor() {
+    this.data = []
+  }
+
+  // add method, takes in the new argument to be added to the array or queue class
+  add(record) {
+    this.data.unshift(record)
+  }
+
+  remove(record) {
+    return this.data.pop(record)
+  }
+
+}
 
 module.exports = Queue;

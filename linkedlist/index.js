@@ -82,11 +82,12 @@ class LinkedList {
   insertLast(data) {
     const node = new Node(data);
 
-    let curnode = this.head;
+    // let curnode = this.head;
+    let curnode = this.getLast();
 
-    while (curnode.next) {
-      curnode = curnode.next;
-    }
+    // while (curnode.next) {
+    //   curnode = curnode.next;
+    // }
     curnode.next = node;
   }
 }

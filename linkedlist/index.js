@@ -103,9 +103,6 @@ class LinkedList {
   getAt(index) {
     let curNode = this.head;
     let counter = 0;
-    if (!this.head) {
-      return null;
-    }
 
     while (curNode) {
       if (counter === index) {
@@ -115,6 +112,20 @@ class LinkedList {
       curNode = curNode.next;
     }
     return null;
+  }
+
+  removeAt(index) {
+    if (!this.head) {
+      return null;
+    }
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return;
+    }
+
+    const node = this.getAt(index - 1);
+    node.next = this.getAt(index + 1);
   }
 }
 

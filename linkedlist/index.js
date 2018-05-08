@@ -127,6 +127,28 @@ class LinkedList {
     const node = this.getAt(index - 1);
     node.next = this.getAt(index + 1);
   }
+
+  insertAt(data, index) {
+    if (!this.head) {
+      this.head = new Node(data);
+    } else if (index === 0) {
+      this.head = new Node(data, this.head);
+    } else if (index === 0 && this.size() > 0) {
+      let node = this.head;
+      // this.head.next = node;
+      this.head = new Node(data, this.head.next);
+      this.head.next = node;
+    } else if (index === this.size() || index > this.size()) {
+      let node = this.getLast();
+      node.next = new Node(data);
+    } else {
+      let rightIndexNode = this.getAt(index);
+      let leftIndexNode = this.getAt(index - 1);
+      const node = new Node(data);
+      leftIndexNode.next = node;
+      leftIndexNode.next.next = rightIndexNode;
+    }
+  }
 }
 
 module.exports = { Node, LinkedList };
